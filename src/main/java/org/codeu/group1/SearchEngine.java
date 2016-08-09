@@ -1,7 +1,10 @@
 package org.codeu.group1;
 
+import redis.clients.jedis.Jedis;
+
 public class SearchEngine {
     public static void main(String[] args) {
-        System.out.println("Hello World!"); // Display the string.
+        Jedis jedis = new Jedis("100.111.160.126", 6379);
+        jedis.auth("codeUgroup1");
     }
 }
