@@ -15,6 +15,7 @@ import org.deeplearning4j.models.word2vec.Word2Vec;
 import org.deeplearning4j.models.glove.Glove.Builder;
 import org.deeplearning4j.models.glove.Glove;
 import org.deeplearning4j.models.embeddings.wordvectors.WordVectors;
+import java.util.Scanner;
 
 import java.io.InputStream;
 import java.text.BreakIterator;
@@ -107,6 +108,14 @@ public class SearchEngine {
 
         new_vec.fit();
 */
-        System.out.println(old_vec.wordsNearest(Arrays.asList(""), Arrays.asList(""), 10));
+
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Please enter what you like to search: ");
+
+        String currentLine;
+        while (!(currentLine = scanner.nextLine()).equals("quit")) {
+            System.out.println(old_vec.wordsNearest(currentLine, 10));
+            System.out.print("Please enter another thing you would like to search: ");
+        }
     }
 }
