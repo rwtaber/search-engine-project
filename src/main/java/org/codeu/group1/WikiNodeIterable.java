@@ -1,7 +1,7 @@
 /**
- * 
+ *
  */
-package com.flatironschool.javacs;
+package org.codeu.group1;
 
 import java.util.ArrayDeque;
 import java.util.ArrayList;

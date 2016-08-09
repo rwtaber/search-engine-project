@@ -1,10 +1,11 @@
 /**
  * 
  */
-package com.flatironschool.javacs;
 
 import static org.junit.Assert.*;
 import static org.hamcrest.CoreMatchers.*;
+
+import org.codeu.group1.*;
 
 import java.util.HashMap;
 import java.util.List;

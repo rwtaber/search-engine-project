@@ -1,4 +1,4 @@
-package com.flatironschool.javacs;
+package org.codeu.group1;
 
 import java.io.File;
 import java.io.IOException;
