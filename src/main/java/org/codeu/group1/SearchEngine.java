@@ -18,6 +18,7 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.InputStream;
 import java.text.BreakIterator;
+import java.util.stream.Collectors;
 import java.util.*;
 
 public class SearchEngine {
@@ -90,6 +91,16 @@ public class SearchEngine {
         term = reader.nextLine();
         Map<String, Integer> map = index.getCounts(term.toLowerCase());
         WikiSearch search = new WikiSearch(map);
+
+        System.out.println();
+        System.out.println("Related search terms:");
+        List<String> result = vec.wordsNearest(term, 10).stream()
+                .map(String::toLowerCase)
+                .distinct()
+                .collect(Collectors.toList());
+        System.out.println(result);
+        System.out.println();
+        System.out.println("Search results:");
         search.printN(10);
     }
 

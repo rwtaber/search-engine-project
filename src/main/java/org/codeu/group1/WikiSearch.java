@@ -69,7 +69,7 @@ public class WikiSearch {
 	 */
 	public void printN(int n) {
 		List<Entry<String, Integer>> entries = sort();
-		for (int i = 0; i < n; i++) {
+		for (int i = 0; i < (n < entries.size() ? n : entries.size()); i++) {
 			System.out.println(entries.get(i));
 		}
 	}
