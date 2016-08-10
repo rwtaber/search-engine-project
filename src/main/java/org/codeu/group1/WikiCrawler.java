@@ -1,7 +1,7 @@
 package org.codeu.group1;
 
 import java.io.IOException;
-import java.util.LinkedList;
+import java.util.ArrayList;
 import java.util.Queue;
 
 import org.jsoup.nodes.Element;
@@ -19,7 +19,7 @@ public class WikiCrawler {
     private JedisIndex index;
 
     // queue of URLs to be indexed
-    private Queue<String> queue = new LinkedList<String>();
+    private Queue<String> queue = new ArrayList<>();
 
     // fetcher used to get pages from Wikipedia
     final static WikiFetcher wf = new WikiFetcher();
@@ -56,13 +56,12 @@ public class WikiCrawler {
     public String crawl(boolean testing) throws IOException {
         String url = queue.remove();
 
-        if (index.isIndexed(url) && !testing) {
-            return null;
-        }
-
         Elements url_p = testing ? wf.readWikipedia(url) : wf.fetchWikipedia(url);
-        index.indexPage(url, url_p);
         queueInternalLinks(url_p);
+
+        if (!index.isIndexed(url) && !testing) {
+            index.indexPage(url, url_p);
+        }
 
         return url;
     }
@@ -91,7 +90,7 @@ public class WikiCrawler {
                             !rel.equals("nofollow") &&
                             !href.contains(":") &&
                             href.startsWith("/wiki/")) {
-                        queue.add(site + href);
+                        if (!queue.contains()) queue.add(site + href);
                     }
                 }
             }
