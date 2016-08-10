@@ -87,7 +87,9 @@ public class WikiCrawler {
 
                     if (!href.isEmpty() &&
                             !href.contains("index.php") &&
-                            !rel.equals("nofollow")) {
+                            !rel.equals("nofollow") &&
+                            !href.contains(":") &&
+                            href.startsWith("/wiki/")) {
                         queue.add(site + href);
                     }
                 }
