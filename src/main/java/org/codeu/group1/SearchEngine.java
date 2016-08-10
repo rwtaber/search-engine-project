@@ -88,7 +88,7 @@ public class SearchEngine {
 
         System.out.println("Enter term to search for:");
         term = reader.nextLine();
-        Map<String, Integer> map = index.getCounts(term);
+        Map<String, Integer> map = index.getCounts(term.toLowerCase());
         WikiSearch search = new WikiSearch(map);
         search.printN(10);
     }
