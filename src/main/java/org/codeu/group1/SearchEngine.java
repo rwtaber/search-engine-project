@@ -27,13 +27,13 @@ public class SearchEngine {
     private Jedis jedis = null;
     private JedisIndex index = null;
     private WikiCrawler wc = null;
+    private File gModel = null;
+    private WordVectors vec = null;
 
     public static void main(String[] args) throws Exception {
         SearchEngine se = new SearchEngine();
         se.setJedis("localhost", 11120, null);
-
-        //File gModel = new File("GoogleNews-vectors-negative300.bin.gz");
-        //WordVectors old_vec = WordVectorSerializer.loadGoogleModel(gModel, true);
+        se.setModel();
 
         Scanner scanner = new Scanner(System.in);
         printMenu();
@@ -43,7 +43,8 @@ public class SearchEngine {
             switch (Integer.parseInt(currentLine)) {
                 case 1: se.doIndexCrawl();
                         break;
-                case 2: break;
+                case 2: se.searchVec();
+                        break;
                 case 3: break;
                 default: System.out.print("Invalid Input"); break;
             }
@@ -78,10 +79,34 @@ public class SearchEngine {
         }
     }
 
+    private void searchVec() {
+        Scanner reader = new Scanner(System.in);
+        String word;
+
+        System.out.println("Enter word to vector search:");
+        word = reader.nextLine();
+        System.out.println(vec.wordsNearest(word, 10));
+    }
+
+/*    private void doSearch() {
+        Scanner reader = new Scanner(System.in);
+        String term;
+
+        System.out.println("Enter a term to search for:");
+        source = reader.nextLine();
+        System.out.println("Enter the number of pages to index:");
+        pagesToCrawl = reader.nextInt();
+    }*/
+
     private void setJedis(String host, int port, String password) {
         jedis = new Jedis(host, port, 30);
         if (password != null) jedis.auth(password);
         index = new JedisIndex(jedis);
+    }
+
+    private void setModel() throws Exception {
+        gModel = new File("GoogleNews-vectors-negative300.bin.gz");
+        vec = WordVectorSerializer.loadGoogleModel(gModel, true);
     }
 
     private List<String> getSentences(String directory) throws Exception {
