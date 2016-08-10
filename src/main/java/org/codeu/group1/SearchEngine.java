@@ -94,23 +94,40 @@ public class SearchEngine {
 
         System.out.println();
         System.out.println("Related search terms:");
+
         List<String> result = vec.wordsNearest(term, 10).stream()
                 .map(String::toLowerCase)
                 .distinct()
                 .collect(Collectors.toList());
-        System.out.println(result);
+
+        List<Double> cos = new ArrayList<>();
+        for(String res : result) {
+            cos.add(vec.similarity(term, res));
+        }
+
+        Map<String, Double> ret = new HashMap<>();
+        for (int i = 0; i < 10; i++) {
+            ret.put(result.get(i), cos.get(i));
+        }
+
+        System.out.println(ret);
         System.out.println();
         System.out.println("Search results:");
         search.printN(10);
+        System.out.println();
     }
 
     private void searchVec() {
         Scanner reader = new Scanner(System.in);
-        String word;
+        String positive;
+        String negative;
 
-        System.out.println("Enter word to vector search:");
-        word = reader.nextLine();
-        System.out.println(vec.wordsNearest(word, 10));
+        System.out.println("Enter positive words:");
+        positive = reader.nextLine();
+        System.out.println("Enter negative words:");
+        negative = reader.nextLine();
+        vec.wordsNearest(Arrays.asList(positive.split("\\s+")), Arrays.asList(negative.split("\\s+")), 10);
+        System.out.println();
     }
 
 /*    private void doSearch() {
