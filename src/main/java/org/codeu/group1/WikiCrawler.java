@@ -90,7 +90,7 @@ public class WikiCrawler {
                             !rel.equals("nofollow") &&
                             !href.contains(":") &&
                             href.startsWith("/wiki/")) {
-                        queue.add(site + href);
+                        if(!queue.contains(site + href)) queue.add(site + href);
                     }
                 }
             }
