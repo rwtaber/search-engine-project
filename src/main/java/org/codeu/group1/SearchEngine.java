@@ -80,8 +80,8 @@ public class SearchEngine {
     }
 
     private void setJedis(String host, int port, String password) {
-        jedis = new Jedis("100.111.160.126", 6379);
-        if (password != null) jedis.auth("codeUgroup1");
+        jedis = new Jedis(host, port, 30);
+        if (password != null) jedis.auth(password);
         index = new JedisIndex(jedis);
     }
 
