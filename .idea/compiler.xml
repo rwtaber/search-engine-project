@@ -29,7 +29,4 @@
       <module name="search-engine-project" target="1.8" />
     </bytecodeTargetLevel>
   </component>
-  <component name="JavacSettings">
-    <option name="ADDITIONAL_OPTIONS_STRING" value="-Xms1024m -Xmx10g -XX:MaxPermSize=2g" />
-  </component>
 </project>
