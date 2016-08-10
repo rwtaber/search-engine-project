@@ -106,7 +106,7 @@ public class SearchEngine {
         }
 
         Map<String, Double> ret = new HashMap<>();
-        for (int i = 0; i < 10; i++) {
+        for (int i = 0; i < result.size(); i++) {
             ret.put(result.get(i), cos.get(i));
         }
 
