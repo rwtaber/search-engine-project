@@ -126,7 +126,7 @@ public class SearchEngine {
         positive = Arrays.asList(reader.nextLine().split("\\s+"));
         System.out.println("Enter negative words:");
         negative = Arrays.asList(reader.nextLine().split("\\s+"));
-        System.out.println(vec.wordsNearest(positive, negative, 10););
+        System.out.println(vec.wordsNearest(positive, negative, 10));
         System.out.println();
     }
 
