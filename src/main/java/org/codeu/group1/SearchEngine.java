@@ -30,7 +30,7 @@ public class SearchEngine {
 
     public static void main(String[] args) throws Exception {
         SearchEngine se = new SearchEngine();
-        se.setJedis("localhost", 11120, "codeUgroup1");
+        se.setJedis("localhost", 11120, null);
 
         File gModel = new File("GoogleNews-vectors-negative300.bin.gz");
         WordVectors old_vec = WordVectorSerializer.loadGoogleModel(gModel, true);
