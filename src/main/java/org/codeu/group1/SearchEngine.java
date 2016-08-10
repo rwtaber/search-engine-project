@@ -119,14 +119,14 @@ public class SearchEngine {
 
     private void searchVec() {
         Scanner reader = new Scanner(System.in);
-        String positive;
-        String negative;
+        List <String> positive;
+        List <String> negative;
 
         System.out.println("Enter positive words:");
-        positive = reader.nextLine();
+        positive = Arrays.asList(reader.nextLine().split("\\s+"));
         System.out.println("Enter negative words:");
-        negative = reader.nextLine();
-        vec.wordsNearest(Arrays.asList(positive.split("\\s+")), Arrays.asList(negative.split("\\s+")), 10);
+        negative = Arrays.asList(reader.nextLine().split("\\s+"));
+        System.out.println(vec.wordsNearest(positive, negative, 10););
         System.out.println();
     }
 
