@@ -53,11 +53,11 @@ public class SearchEngine {
     }
 
     private static void printMenu() {
-        System.out.print("Group One search engine 0.1");
-        System.out.print("Select and enter an option from below, or type quit to quit:");
-        System.out.print("1) Crawl and index page");
-        System.out.print("2) Search for a term");
-        System.out.print("3) Search word2vec");
+        System.out.println("Group One search engine 0.1");
+        System.out.println("Select and enter an option from below, or type quit to quit:");
+        System.out.println("1) Crawl and index page");
+        System.out.println("2) Search for a term");
+        System.out.println("3) Search word2vec");
     }
 
     private void doIndexCrawl() throws Exception {
