@@ -63,6 +63,18 @@ public class WikiSearch {
 	}
 
 	/**
+	 * Prints N contents in order of term frequency.
+	 *
+	 * @param map
+	 */
+	public void printN(int n) {
+		List<Entry<String, Integer>> entries = sort();
+		for (int i = 0; i < n; i++) {
+			System.out.println(entries.get(i));
+		}
+	}
+
+	/**
 	 * Computes the union of two search results.
 	 *
 	 * @param that

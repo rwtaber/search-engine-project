@@ -18,10 +18,7 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.InputStream;
 import java.text.BreakIterator;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Locale;
-import java.util.Scanner;
+import java.util.*;
 
 public class SearchEngine {
     private Jedis jedis = null;
@@ -40,13 +37,19 @@ public class SearchEngine {
 
         String currentLine;
         while (!(currentLine = scanner.nextLine()).equals("quit")) {
-            switch (Integer.parseInt(currentLine)) {
-                case 1: se.doIndexCrawl();
-                        break;
-                case 2: se.searchVec();
-                        break;
-                case 3: break;
-                default: System.out.print("Invalid Input"); break;
+            int scase;
+            try {
+                scase = Integer.parseInt(currentLine);
+            } catch (NumberFormatException e) {
+                System.out.println("Input not an int, try again");
+                continue;
+            }
+
+            switch (scase) {
+                case 1: se.doIndexCrawl(); break;
+                case 2: break;
+                case 3: se.searchVec(); break;
+                default: System.out.println("Input a number 1-3"); break;
             }
             printMenu();
         }
@@ -77,6 +80,17 @@ public class SearchEngine {
             wc.crawl(false);
             pagesCrawled++;
         }
+    }
+
+    private void searchIndex() {
+        Scanner reader = new Scanner(System.in);
+        String term;
+
+        System.out.println("Enter term to search for:");
+        term = reader.nextLine();
+        Map<String, Integer> map = index.getCounts(term);
+        WikiSearch search = new WikiSearch(map);
+        search.printN(10);
     }
 
     private void searchVec() {
