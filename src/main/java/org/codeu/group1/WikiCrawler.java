@@ -8,6 +8,7 @@ import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 import org.jsoup.nodes.Node;
 import org.jsoup.nodes.TextNode;
+import org.jsoup.nodes.Comment;
 
 
 public class WikiCrawler {
@@ -78,7 +79,7 @@ public class WikiCrawler {
 
             for(Node node : iter) {
                 if (node instanceof TextNode) continue;
-
+                if (node instanceof Comment) continue;
                 Element e = (Element) node;
 
                 if (e.tagName() == "a") {
