@@ -47,7 +47,7 @@ public class SearchEngine {
 
             switch (scase) {
                 case 1: se.doIndexCrawl(); break;
-                case 2: break;
+                case 2: se.searchIndex(); break;
                 case 3: se.searchVec(); break;
                 default: System.out.println("Input a number 1-3"); break;
             }

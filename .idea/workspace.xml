@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6066d772-13f5-4d3f-95ad-61be555fe8d8" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/codeu/group1/SearchEngine.java" afterPath="$PROJECT_DIR$/src/main/java/org/codeu/group1/SearchEngine.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/codeu/group1/WikiSearch.java" afterPath="$PROJECT_DIR$/src/main/java/org/codeu/group1/WikiSearch.java" />
     </list>
     <ignored path="search-engine-project.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -29,8 +27,8 @@
       <file leaf-file-name="SearchEngine.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/org/codeu/group1/SearchEngine.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="285">
-              <caret line="71" column="30" selection-start-line="71" selection-start-column="30" selection-end-line="71" selection-end-column="30" />
+            <state relative-caret-position="717">
+              <caret line="97" column="20" selection-start-line="97" selection-start-column="20" selection-end-line="97" selection-end-column="20" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -105,8 +103,8 @@
         <option value="$PROJECT_DIR$/src/main/java/org/codeu/group1/TermCounter.java" />
         <option value="$MAVEN_REPOSITORY$/redis/clients/jedis/2.9.0/jedis-2.9.0.jar!/redis/clients/jedis/Jedis.class" />
         <option value="$PROJECT_DIR$/src/main/java/org/codeu/group1/WikiCrawler.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/codeu/group1/SearchEngine.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/codeu/group1/WikiSearch.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/codeu/group1/SearchEngine.java" />
       </list>
     </option>
   </component>
@@ -151,8 +149,8 @@
     </treeState>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="24" />
-    <option name="y" value="72" />
+    <option name="x" value="272" />
+    <option name="y" value="69" />
     <option name="width" value="1600" />
     <option name="height" value="945" />
   </component>
@@ -648,7 +646,7 @@
     </history-entry>
   </component>
   <component name="ToolWindowManager">
-    <frame x="24" y="72" width="1600" height="945" extended-state="0" />
+    <frame x="272" y="69" width="1600" height="945" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1062,8 +1060,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/org/codeu/group1/SearchEngine.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="71" column="30" selection-start-line="71" selection-start-column="30" selection-end-line="71" selection-end-column="30" />
+        <state relative-caret-position="717">
+          <caret line="97" column="20" selection-start-line="97" selection-start-column="20" selection-end-line="97" selection-end-column="20" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
