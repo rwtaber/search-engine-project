@@ -32,8 +32,8 @@ public class SearchEngine {
         SearchEngine se = new SearchEngine();
         se.setJedis("localhost", 11120, null);
 
-        File gModel = new File("GoogleNews-vectors-negative300.bin.gz");
-        WordVectors old_vec = WordVectorSerializer.loadGoogleModel(gModel, true);
+        //File gModel = new File("GoogleNews-vectors-negative300.bin.gz");
+        //WordVectors old_vec = WordVectorSerializer.loadGoogleModel(gModel, true);
 
         Scanner scanner = new Scanner(System.in);
         printMenu();
@@ -47,7 +47,6 @@ public class SearchEngine {
                 case 3: break;
                 default: System.out.print("Invalid Input"); break;
             }
-            System.out.println(old_vec.wordsNearest(currentLine, 10));
             printMenu();
         }
     }
