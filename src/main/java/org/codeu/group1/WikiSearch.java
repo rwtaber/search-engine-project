@@ -145,7 +145,7 @@ public class WikiSearch {
 
 		Collections.sort(sorted, new Comparator<Entry<String, Integer>> () {
 			public int compare(Entry<String, Integer> e1, Entry<String, Integer> e2) {
-	        return e1.getValue().compareTo(e2.getValue());
+	        return e2.getValue().compareTo(e1.getValue());
 	    }
 		});
 		return sorted;
